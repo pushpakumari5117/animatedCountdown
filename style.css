@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5cebe;
+  color: #114e60;
+  margin:0;
+  height: 100vh;
+  overflow: hidden;
+}
+.counter{
+  position:fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,50%);
+  text-align: center;
+}
+.counter.hide{
+  transform: translate(-50%,-50%) scale(0);
+  animation: hide .2s ease-out;
+}
+@keyframes hide {
+  0%{
+    transform: translate(-50%,-50%) scale(1);
+  }
+  100%{
+    transform: translate(-50%,-50%) scale(0);
+  }
+}
+.nums{
+  position: relative;
+  overflow: hidden;
+  width: 250px;
+  height: 65px;
+}
+.nums span{
+  font-size: 4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotate(130deg);
+  transform-origin: bottom center;
+}
+.nums span.in{
+  transform: translate(-50%,-50%) rotate(0deg);
+  animation: goIn 0.5s ease-in-out;
+}
+.nums span.out{
+  animation: goOut 0.5s ease-in-out;
+}
+@keyframes goIn {
+  0%{
+    transform: translate(-50%,-50%) rotate(130deg);
+  }
+  30%{
+    transform: translate(-50%,-50%) rotate(-20deg);
+  }
+  60%{
+    transform: translate(-50%,-50%) rotate(10deg);
+  }
+  100%{
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+}
+@keyframes goOut {
+  0%{
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+  60%{
+    transform: translate(-50%,-50%) rotate(20deg);
+  }
+  100%{
+    transform: translate(-50%,-50%) rotate(-120deg);
+  }
+}
+.nums span i{
+  font-size: 4rem;
+  padding: 0 10px;
+  color: #fb3640;
+}
+.counter h4{
+  font-size: 2rem;
+  margin-top: 20px;
+}
+.final{
+  position:fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,50%) scale(0);
+  text-align: center;
+}
+.final.show{
+  transform: translate(-50%,-50%) scale(1);
+  animation: show .2s ease-out;
+}
+@keyframes show {
+  0%{
+    transform: translate(-50%,-50%) scale(0);
+  }
+  30%{
+    transform: translate(-50%,-50%) scale(1.4);
+  }
+  100%{
+    transform: translate(-50%,-50%) scale(1);
+  }
+}
+.final h1{
+  font-size: 2rem;
+}
+.final button{
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  background-color: #114e60;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.final button:hover{
+  background-color: #ffffff;
+  color: #114e60;
+  border: 2px solid #114e60;
+}
+.final button:focus{
+  outline: none;
+}
